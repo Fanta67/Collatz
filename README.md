@@ -1,18 +1,18 @@
 # CS373: Software Engineering Collatz Repo
 
-* Name: (your Full Name)
+* Name: Dylan Kan
 
-* EID: (your EID)
+* EID: dk9362
 
-* GitLab ID: (your GitLab ID)
+* GitLab ID: fanta67
 
-* HackerRank ID: (your HackerRank ID)
+* HackerRank ID: fanta67
 
-* Git SHA: (most recent Git SHA, final change to your repo will be adding this value)
+* Git SHA: 24f868385b39094fd417682982c665727957af03
 
-* GitLab Pipelines: (link to your GitLab CI Pipeline)
+* GitLab Pipelines: https://gitlab.com/Fanta67/cs373-collatz/pipelines
 
-* Estimated completion time: (estimated time in hours, int or float)
+* Estimated completion time: 6 hours
 
 * Actual completion time: (actual time in hours, int or float)
 

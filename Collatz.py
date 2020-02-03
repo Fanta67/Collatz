@@ -18,7 +18,8 @@ from typing import IO, List
 # collatz_read
 # ------------
 
-def collatz_read (s: str) -> List[int] :
+
+def collatz_read(s: str) -> List[int]:
     """
     read two ints
     s a string
@@ -27,11 +28,13 @@ def collatz_read (s: str) -> List[int] :
     a = s.split()
     return [int(a[0]), int(a[1])]
 
+
 # ------------
 # collatz_eval
 # ------------
 
-def collatz_eval (i: int, j: int) -> int :
+
+def collatz_eval(i: int, j: int) -> int:
     """
     i the beginning of the range, inclusive
     j the end       of the range, inclusive
@@ -40,11 +43,13 @@ def collatz_eval (i: int, j: int) -> int :
     # <your code>
     return i + j
 
+
 # -------------
 # collatz_print
 # -------------
 
-def collatz_print (w: IO[str], i: int, j: int, v: int) -> None :
+
+def collatz_print(w: IO[str], i: int, j: int, v: int) -> None:
     """
     print three ints
     w a writer
@@ -54,16 +59,18 @@ def collatz_print (w: IO[str], i: int, j: int, v: int) -> None :
     """
     w.write(str(i) + " " + str(j) + " " + str(v) + "\n")
 
+
 # -------------
 # collatz_solve
 # -------------
 
-def collatz_solve (r: IO[str], w: IO[str]) -> None :
+
+def collatz_solve(r: IO[str], w: IO[str]) -> None:
     """
     r a reader
     w a writer
     """
-    for s in r :
+    for s in r:
         i, j = collatz_read(s)
-        v    = collatz_eval(i, j)
+        v = collatz_eval(i, j)
         collatz_print(w, i, j, v)
