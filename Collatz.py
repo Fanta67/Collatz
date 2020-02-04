@@ -12,6 +12,7 @@
 # imports
 # -------
 
+from sys import stdin, stdout
 from typing import IO, List
 
 # ------------
@@ -41,9 +42,12 @@ def collatz_eval(i: int, j: int) -> int:
     return the max cycle length of the range [i, j]
     """
     maxcyclength = 0
-    cyclength = 0
-    for i in range(i, j + 1):
-        curr = i
+    if i > j:
+        temp = i
+        i = j
+        j = temp
+    for x in range(i, j + 1):
+        curr = x
         cyclength = 1
         while curr != 1:
             if curr % 2 == 0:
@@ -55,8 +59,6 @@ def collatz_eval(i: int, j: int) -> int:
         if cyclength > maxcyclength:
             maxcyclength = cyclength
     return maxcyclength
-
-
 
 # -------------
 # collatz_print
@@ -88,3 +90,6 @@ def collatz_solve(r: IO[str], w: IO[str]) -> None:
         i, j = collatz_read(s)
         v = collatz_eval(i, j)
         collatz_print(w, i, j, v)
+
+if __name__ == '__main__':
+	collatz_solve(stdin, stdout)
