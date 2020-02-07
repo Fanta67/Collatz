@@ -47,6 +47,10 @@ def collatz_eval(i: int, j: int) -> int:
         i = j
         j = temp
     assert i <= j
+    #optimization from quiz 4
+    if (i < j // 2) {
+        i = j // 2
+    }
     for x in range(i, j + 1):
         curr = x
         cyclength = 1
