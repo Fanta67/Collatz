@@ -52,10 +52,10 @@ def collatz_eval(i: int, j: int) -> int:
         cyclength = 1
         while curr != 1:
             if curr % 2 == 0:
-                curr /= 2
+                curr //= 2
             else:
-                curr *= 3
-                curr += 1
+                #optimization from quiz 3
+                curr += (curr << 1) + 1
             cyclength += 1
         assert curr == 1
         assert cyclength > 0
