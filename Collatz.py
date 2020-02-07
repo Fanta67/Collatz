@@ -34,8 +34,6 @@ def collatz_read(s: str) -> List[int]:
 # collatz_eval
 # ------------
 
-#
-cache = [0, 1] + [0 for x in range(999998)]
 
 def collatz_eval(i: int, j: int) -> int:
     """
@@ -43,18 +41,12 @@ def collatz_eval(i: int, j: int) -> int:
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
-    global cache
-
     maxcyclength = 0
     if i > j:
         temp = i
         i = j
         j = temp
     assert i <= j
-    #optimization from quiz 4
-    if (i < j // 2) {
-        i = j // 2
-    }
     for x in range(i, j + 1):
         curr = x
         cyclength = 1
@@ -62,15 +54,14 @@ def collatz_eval(i: int, j: int) -> int:
             if curr % 2 == 0:
                 curr /= 2
             else:
-                #optimization from quiz 3
-                curr += (curr >> 1) + 1
+                curr *= 3
+                curr += 1
             cyclength += 1
         assert curr == 1
         assert cyclength > 0
         if cyclength > maxcyclength:
             maxcyclength = cyclength
-    #could be equal to 0 if i and j are both 0.
-    assert maxcyclength >= 0
+    assert maxcyclength > 0
     assert maxcyclength > cyclength
     return maxcyclength
 
