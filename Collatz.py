@@ -46,6 +46,7 @@ def collatz_eval(i: int, j: int) -> int:
         temp = i
         i = j
         j = temp
+    assert i <= j
     for x in range(i, j + 1):
         curr = x
         cyclength = 1
@@ -56,8 +57,12 @@ def collatz_eval(i: int, j: int) -> int:
                 curr *= 3
                 curr += 1
             cyclength += 1
+        assert curr == 1
+        assert cyclength > 0
         if cyclength > maxcyclength:
             maxcyclength = cyclength
+    assert maxcyclength > 0
+    assert maxcyclength > cyclength
     return maxcyclength
 
 # -------------
