@@ -67,7 +67,7 @@ def collatz_eval(i: int, j: int) -> int:
             maxcyclength = cyclength
     #could be equal to 0 if i and j are 0
     assert maxcyclength >= 0
-    assert maxcyclength > cyclength
+    assert maxcyclength >= cyclength
     return maxcyclength
 
 # -------------
