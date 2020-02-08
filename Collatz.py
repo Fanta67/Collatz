@@ -42,12 +42,15 @@ def collatz_eval(i: int, j: int) -> int:
     j the end       of the range, inclusive
     return the max cycle length of the range [i, j]
     """
+    global cache
     maxcyclength = 0
     if i > j:
         temp = i
         i = j
         j = temp
     assert i <= j
+    assert i >= 0
+    assert j >= 0
     #optimization from quiz 4
     if (i < j // 2):
         i = j // 2
@@ -60,6 +63,8 @@ def collatz_eval(i: int, j: int) -> int:
             else:
                 #optimization from quiz 3
                 curr += (curr << 1) + 1
+                curr //= 2
+                cyclength += 1
             cyclength += 1
         assert curr == 1
         assert cyclength > 0
