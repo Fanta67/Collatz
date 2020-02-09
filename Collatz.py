@@ -57,16 +57,26 @@ def collatz_eval(i: int, j: int) -> int:
     for x in range(i, j + 1):
         curr = x
         cyclength = 1
-        while curr != 1:
-            if curr % 2 == 0:
-                curr //= 2
-            else:
-                #optimization from quiz 3
-                curr += (curr << 1) + 1
-                curr //= 2
+        #already stored in cache
+        if cache[curr] != 0:
+            cyclength = cache[curr]
+        #not in cache yet
+        else :
+            while curr != 1:
+                if curr % 2 == 0:
+                    curr //= 2
+                else:
+                    #optimization from quiz 3
+                    curr += (curr << 1) + 1
+                    #do 2 steps at once for odd numbers
+                    curr //= 2
+                    cyclength += 1
+                if (curr < len(cache) and cache[curr] != 0):
+                    cyclength += cache[curr]
+                    break
                 cyclength += 1
-            cyclength += 1
-        assert curr == 1
+            #lazily fill cache
+            cache[x] = cyclength
         assert cyclength > 0
         if cyclength > maxcyclength:
             maxcyclength = cyclength
