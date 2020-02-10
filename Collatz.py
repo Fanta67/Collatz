@@ -12,7 +12,6 @@
 # imports
 # -------
 
-from sys import stdin, stdout
 from typing import IO, List
 
 # ------------
@@ -92,8 +91,7 @@ def collatz_eval(i: int, j: int) -> int:
         if cyclength > maxcyclength:
             maxcyclength = cyclength
 
-    # could be equal to 0 if i and j are 0
-    assert maxcyclength >= 0
+    assert maxcyclength > 0
     assert maxcyclength >= cyclength
     return maxcyclength
 
@@ -128,7 +126,3 @@ def collatz_solve(r: IO[str], w: IO[str]) -> None:
         i, j = collatz_read(s)
         v = collatz_eval(i, j)
         collatz_print(w, i, j, v)
-
-
-if __name__ == "__main__":
-    collatz_solve(stdin, stdout)
