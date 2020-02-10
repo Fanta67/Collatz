@@ -1,4 +1,34 @@
-commit 0d7271bd204840e1d9799e8bffdde136cbcf7d57 (HEAD -> master, origin/master, origin/HEAD)
+commit bf3caa3c7437848b369f116ceb8e798e636a488f (HEAD -> master, origin/master, origin/HEAD)
+Author: Dylan Kan <fanta67@cs.utexas.edu>
+Date:   Sun Feb 9 19:57:18 2020 -0600
+
+    small assert fix, unit tests
+
+commit 87343f47a82cfad605a38a0bc4b122daf440d894
+Author: Dylan Kan <fanta67@cs.utexas.edu>
+Date:   Sun Feb 9 14:40:11 2020 -0600
+
+    ran pydoc to generate Collatz.html
+
+commit 560705fe33ee66b1dd482f0bdc6bf1fc3d2af6ad
+Author: Dylan Kan <fanta67@cs.utexas.edu>
+Date:   Sun Feb 9 13:16:44 2020 -0600
+
+    newline at end of .out file for pipeline
+
+commit 90ded8f59e943b6e59641a596fee7dcf99c3a9ff
+Author: Dylan Kan <fanta67@cs.utexas.edu>
+Date:   Sun Feb 9 13:08:50 2020 -0600
+
+    acceptance tests
+
+commit afd1298c5c9d552b86919f7ab870d8e8d1930fcc
+Author: Dylan Kan <fanta67@cs.utexas.edu>
+Date:   Sat Feb 8 23:40:41 2020 -0600
+
+    Create log file
+
+commit 0d7271bd204840e1d9799e8bffdde136cbcf7d57
 Author: Dylan Kan <fanta67@cs.utexas.edu>
 Date:   Sat Feb 8 23:21:44 2020 -0600
 
